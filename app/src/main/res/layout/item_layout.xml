@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="person"
+            type="com.example.thenamequizapp.Person" />
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_margin="4dp"
+        android:gravity="center_vertical"
+        android:id="@+id/rootView"
+        >
+        <com.google.android.material.circularreveal.CircularRevealLinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/person_image"
+            android:background="@drawable/me"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp">
+
+            <TextView
+                android:id="@+id/person_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Anders Mæhlum Halvorsen"
+                android:textSize="18dp"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</layout>
