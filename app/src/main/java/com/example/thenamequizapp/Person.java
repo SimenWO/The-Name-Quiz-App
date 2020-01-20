@@ -1,7 +1,9 @@
 package com.example.thenamequizapp;
 
+import android.graphics.Bitmap;
+
 public class Person {
 
     String name;
-    String imgid;
+    Bitmap image;
 }
