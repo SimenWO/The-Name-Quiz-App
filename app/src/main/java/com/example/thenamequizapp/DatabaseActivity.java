@@ -43,7 +43,7 @@ public class DatabaseActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dispatchPictureTakerAction();
+              dispatchPictureTakerAction();
             }
         });
     }
