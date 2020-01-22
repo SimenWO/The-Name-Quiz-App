@@ -45,8 +45,8 @@ public class DatabaseActivity extends AppCompatActivity {
     private ImageButton mCamera;
     private Button mAdd;
 
-    private int images[] = {R.drawable.anders, R.drawable.simen, R.drawable.sebastian};
-    private String names[] = {"Anders", "Simen", "Sebastian"};
+    private int images[] = {R.drawable.anders, R.drawable.simen, R.drawable.sebastian,R.drawable.anders, R.drawable.simen, R.drawable.sebastian,R.drawable.anders, R.drawable.simen, R.drawable.sebastian};
+    private String names[] = {"Anders", "Simen", "Sebastian","Anders", "Simen", "Sebastian","Anders", "Simen", "Sebastian"};
 
 
     @Override
