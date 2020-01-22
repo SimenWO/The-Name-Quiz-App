@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -56,7 +57,14 @@ public class DatabaseActivity extends AppCompatActivity {
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
             View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
                 final EditText mName = (EditText) mView.findViewById(R.id.mname);
+                ImageButton mCamera = (ImageButton) mView.findViewById(R.id.imageButton);
                 Button mAdd = (Button) mView.findViewById(R.id.button);
+                mCamera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dispatchPictureTakerAction();
+                    }
+                });
                 mAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -71,7 +79,7 @@ public class DatabaseActivity extends AppCompatActivity {
                 mBuilder.setView(mView);
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
-             // dispatchPictureTakerAction();
+
             }
         });
     }

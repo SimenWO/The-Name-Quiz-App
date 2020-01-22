@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="@color/colorAccent">
 
     <TextView
 
@@ -13,25 +15,39 @@
         android:layout_marginTop="5dp"
         android:text="@string/add_new_person"
         android:textSize="25sp"
-        android:textStyle="bold
-"/>
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_camera_alt_black_24dp" />
 
     <EditText
         android:id="@+id/mname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
         android:ems="10"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:hint="@string/enter_your_name"
-        android:inputType="textPersonName" />
-    
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/roundededittext"/>
+
 
     <Button
         android:id="@+id/button"
-        android:background="@drawable/roundedbutton"
+        android:background="@drawable/roundedbutton_primarycolor"
         android:textColor="@android:color/white"
         android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:text="@string/add_button" />
 
