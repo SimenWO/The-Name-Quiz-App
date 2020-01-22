@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
-import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -58,6 +59,7 @@ public class DatabaseActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
                 mCamera = mView.findViewById(R.id.imageButton);
@@ -76,7 +78,6 @@ public class DatabaseActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         if (!mName.getText().toString().isEmpty()) {
                             Toast.makeText(DatabaseActivity.this, "Added successfully", Toast.LENGTH_SHORT).show();
-
                         } else {
                             Toast.makeText(DatabaseActivity.this, "Please try again ", Toast.LENGTH_SHORT).show();
                         }
@@ -97,6 +98,10 @@ public class DatabaseActivity extends AppCompatActivity {
             if (requestCode == 1) {
                 Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
                 System.out.println(bitmap);
+                Drawable d = new BitmapDrawable(getResources(), bitmap);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    mCamera.setBackground(d);
+                }
 
             }
         }
