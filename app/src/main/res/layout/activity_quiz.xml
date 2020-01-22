@@ -16,7 +16,6 @@
         android:text="Who is this?"
         android:textColor="#FFFFFF"
         android:textSize="40dp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
