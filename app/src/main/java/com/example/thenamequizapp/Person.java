@@ -4,8 +4,8 @@ import android.graphics.Bitmap;
 
 public class Person {
 
-    String name;
-    Bitmap image;
+    private String name;
+    private Bitmap image;
 
     Person(String name, Bitmap image) {
         this.name = name;
