@@ -36,6 +36,10 @@ public class DatabaseActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private String pathToFile;
+    private EditText mName;
+    private ImageButton mCamera;
+    private Button mAdd;
+
 
 
     List<Person> personList = new ArrayList<>();
@@ -45,6 +49,9 @@ public class DatabaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
         fab = findViewById(R.id.fab);
+        mName = findViewById(R.id.mname);
+        mAdd = findViewById(R.id.button);
+        mCamera = findViewById(R.id.imageButton);
 
         if(Build.VERSION.SDK_INT >= 23){
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
@@ -56,20 +63,20 @@ public class DatabaseActivity extends AppCompatActivity {
             public void onClick(View v) {
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
             View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
-                final EditText mName = (EditText) mView.findViewById(R.id.mname);
-                ImageButton mCamera = (ImageButton) mView.findViewById(R.id.imageButton);
-                Button mAdd = (Button) mView.findViewById(R.id.button);
+
                 mCamera.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dispatchPictureTakerAction();
                     }
                 });
+
                 mAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if(!mName.getText().toString().isEmpty()){
                             Toast.makeText(DatabaseActivity.this, "Added successfully", Toast.LENGTH_SHORT).show();
+
                         }else{
                             Toast.makeText(DatabaseActivity.this, "Please try again ", Toast.LENGTH_SHORT).show();
                         }
@@ -92,6 +99,7 @@ public class DatabaseActivity extends AppCompatActivity {
             if(requestCode == 1){
                 Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
                 System.out.println(bitmap);
+
             }
         }
     }
