@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">The Name Quiz App</string>
     <string name="anders">Anders Mælhum</string>
+    <string name="add_new_person">Add new person</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="add_button">add</string>
 </resources>

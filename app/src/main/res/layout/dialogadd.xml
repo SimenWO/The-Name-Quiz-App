@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
         android:text="@string/add_new_person"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold
 "/>
 
@@ -23,8 +23,7 @@
         android:ems="10"
         android:layout_marginTop="10dp"
         android:hint="@string/enter_your_name"
-        android:inputType="textPersonName"
-        />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/button"
@@ -33,7 +32,7 @@
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add" />
+        android:text="@string/add_button" />
 
 
 </LinearLayout>
