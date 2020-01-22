@@ -30,10 +30,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/textView"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="13dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_height="wrap_content"

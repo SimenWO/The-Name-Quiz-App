@@ -3,7 +3,10 @@ package com.example.thenamequizapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
@@ -36,19 +39,28 @@ import static android.os.Environment.getExternalStoragePublicDirectory;
 public class DatabaseActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
+    private RecyclerView recyclerView;
     private String pathToFile;
     private EditText mName;
     private ImageButton mCamera;
     private Button mAdd;
 
+    private int images[] = {R.drawable.anders, R.drawable.simen, R.drawable.sebastian};
+    private String names[] = {"Anders", "Simen", "Sebastian"};
 
-    List<Person> personList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
+
         fab = findViewById(R.id.fab);
+        recyclerView = findViewById(R.id.recyclerview);
+
+
+        MyAdapter myAdapter = new MyAdapter(this, names, images);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         if (Build.VERSION.SDK_INT >= 23) {
@@ -59,9 +71,9 @@ public class DatabaseActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
+
                 mCamera = mView.findViewById(R.id.imageButton);
                 mName = mView.findViewById(R.id.mname);
                 mAdd = mView.findViewById(R.id.button);
@@ -83,6 +95,7 @@ public class DatabaseActivity extends AppCompatActivity {
                         }
                     }
                 });
+
                 mBuilder.setView(mView);
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();

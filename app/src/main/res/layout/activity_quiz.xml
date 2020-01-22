@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/me" />
+        app:srcCompat="@drawable/anders" />
 
     <EditText
         android:id="@+id/nameInput"

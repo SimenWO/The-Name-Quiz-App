@@ -1,13 +1,13 @@
 package com.example.thenamequizapp;
 
-import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 public class Person {
 
     private String name;
-    private Bitmap image;
+    private int image;
 
-    Person(String name, Bitmap image) {
+    Person(String name, int image) {
         this.name = name;
         this.image = image;
     }
@@ -16,7 +16,7 @@ public class Person {
         this.name = name;
     }
 
-    public void setImage(Bitmap image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
@@ -24,7 +24,7 @@ public class Person {
         return name;
     }
 
-    public Bitmap getImage() {
+    public int getImage() {
         return image;
     }
 }
