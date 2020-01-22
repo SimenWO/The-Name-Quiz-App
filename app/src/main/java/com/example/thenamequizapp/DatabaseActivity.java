@@ -64,7 +64,7 @@ public class DatabaseActivity extends AppCompatActivity {
     private void dispatchPictureTakerAction(){
         Intent takePic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if(takePic.resolveActivity(getPackageManager()) != null){
-            File photoFile = null;
+            File photoFile;
             photoFile = createPhotoFile();
 
             if(photoFile != null){
