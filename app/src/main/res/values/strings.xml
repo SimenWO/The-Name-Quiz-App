@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">The Name Quiz App</string>
     <string name="anders">Anders Mælhum</string>
+    <string name="result">Result</string>
+    <string name="correct_answer_s">Correct answer(s)</string>
 </resources>

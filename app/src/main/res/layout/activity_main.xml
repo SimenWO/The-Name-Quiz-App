@@ -47,7 +47,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="68dp"
         android:background="@drawable/transparentbutton"
-        android:text="Database"
+        android:text="Questions"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
