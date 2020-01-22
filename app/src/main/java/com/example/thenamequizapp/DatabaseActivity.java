@@ -1,10 +1,12 @@
 package com.example.thenamequizapp;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,19 +17,27 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static android.os.Environment.getExternalStoragePublicDirectory;
 
 public class DatabaseActivity extends AppCompatActivity {
 
-    FloatingActionButton fab;
-    String pathToFile;
+    private FloatingActionButton fab;
+    private String pathToFile;
+
+
+    List<Person> personList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +53,25 @@ public class DatabaseActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
+                final EditText mName = (EditText) mView.findViewById(R.id.mname);
+                Button mAdd = (Button) mView.findViewById(R.id.button);
+                mAdd.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!mName.getText().toString().isEmpty()){
+                            Toast.makeText(DatabaseActivity.this, "Added successfully", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(DatabaseActivity.this, "Please try again ", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
-              dispatchPictureTakerAction();
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+             // dispatchPictureTakerAction();
             }
         });
     }
