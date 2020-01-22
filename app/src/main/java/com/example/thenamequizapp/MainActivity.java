@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         List<Person> questions = new ArrayList<>();
 
 
-
         startButton = findViewById(R.id.start);
         manageButton = findViewById(R.id.manage);
 
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
 
 }

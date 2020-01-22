@@ -20,7 +20,5 @@ public class QuizActivity extends AppCompatActivity {
         checkAnswerButton = findViewById(R.id.checkAnswerButton);
 
 
-
-
     }
 }

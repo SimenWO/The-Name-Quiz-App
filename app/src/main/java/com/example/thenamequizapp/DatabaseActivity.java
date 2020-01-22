@@ -41,7 +41,6 @@ public class DatabaseActivity extends AppCompatActivity {
     private Button mAdd;
 
 
-
     List<Person> personList = new ArrayList<>();
 
     @Override
@@ -51,7 +50,7 @@ public class DatabaseActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
 
 
-        if(Build.VERSION.SDK_INT >= 23){
+        if (Build.VERSION.SDK_INT >= 23) {
             requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
         }
 
@@ -59,8 +58,8 @@ public class DatabaseActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
-            View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
                 mCamera = mView.findViewById(R.id.imageButton);
                 mName = mView.findViewById(R.id.mname);
                 mAdd = mView.findViewById(R.id.button);
@@ -75,19 +74,17 @@ public class DatabaseActivity extends AppCompatActivity {
                 mAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(!mName.getText().toString().isEmpty()){
+                        if (!mName.getText().toString().isEmpty()) {
                             Toast.makeText(DatabaseActivity.this, "Added successfully", Toast.LENGTH_SHORT).show();
 
-                        }else{
+                        } else {
                             Toast.makeText(DatabaseActivity.this, "Please try again ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-
                 mBuilder.setView(mView);
                 AlertDialog dialog = mBuilder.create();
                 dialog.show();
-
             }
         });
     }
@@ -96,8 +93,8 @@ public class DatabaseActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(resultCode == RESULT_OK){
-            if(requestCode == 1){
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 1) {
                 Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
                 System.out.println(bitmap);
 
@@ -105,13 +102,13 @@ public class DatabaseActivity extends AppCompatActivity {
         }
     }
 
-    private void dispatchPictureTakerAction(){
+    private void dispatchPictureTakerAction() {
         Intent takePic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(takePic.resolveActivity(getPackageManager()) != null){
+        if (takePic.resolveActivity(getPackageManager()) != null) {
             File photoFile;
             photoFile = createPhotoFile();
 
-            if(photoFile != null){
+            if (photoFile != null) {
                 pathToFile = photoFile.getAbsolutePath();
                 Uri photoURI = FileProvider.getUriForFile(DatabaseActivity.this, "com.example.thenamequizapp.fileprovider", photoFile);
                 takePic.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
@@ -120,13 +117,13 @@ public class DatabaseActivity extends AppCompatActivity {
         }
     }
 
-    private File createPhotoFile(){
+    private File createPhotoFile() {
         String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         File storageDir = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image = null;
-        try{
+        try {
             image = File.createTempFile(name, ".jpg", storageDir);
-        }catch(Exception e){
+        } catch (Exception e) {
             Log.d("mylog", "Exception : " + e.toString());
         }
         return image;
