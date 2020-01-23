@@ -42,11 +42,6 @@ public class DatabaseActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
-    private String pathToFile;
-    private EditText mName;
-    private ImageButton mCamera;
-    private Button mAdd;
-
     private List<Drawable> images = new ArrayList<>();
     private List<String> names = new ArrayList<>();
 
