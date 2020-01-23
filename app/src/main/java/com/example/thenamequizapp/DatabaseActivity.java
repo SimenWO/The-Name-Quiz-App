@@ -56,8 +56,8 @@ public class DatabaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
 
-         images = ((Questions) this.getApplication()).getImages();
-         names = ((Questions) this.getApplication()).getNames();
+        images = ((Questions) this.getApplication()).getImages();
+        names = ((Questions) this.getApplication()).getNames();
 
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerview);

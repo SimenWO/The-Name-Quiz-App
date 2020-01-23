@@ -61,11 +61,11 @@ public class Questions extends Application {
         names.add(name);
     }
 
-    public void deleteImage(int index){
+    public void deleteImage(int index) {
         images.remove(index);
     }
 
-    public void deleteName(int index){
+    public void deleteName(int index) {
         names.remove(index);
     }
 }

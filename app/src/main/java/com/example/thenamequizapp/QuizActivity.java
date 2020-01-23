@@ -24,7 +24,7 @@ public class QuizActivity extends AppCompatActivity {
         checkAnswerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(nameInput.getText().toString() == "") {
+                if (nameInput.getText().toString() == "") {
                     System.out.println("Do something here");
                 }
             }
