@@ -17,29 +17,15 @@ public class Questions extends Application {
     }
 
     public Questions() {
-
         /*
         images.add(getResources().getDrawable(R.drawable.anders));
         images.add(getResources().getDrawable(R.drawable.simen));
         images.add(getResources().getDrawable(R.drawable.sebastian));
-        images.add(getResources().getDrawable(R.drawable.anders));
-        images.add(getResources().getDrawable(R.drawable.simen));
-        images.add(getResources().getDrawable(R.drawable.sebastian));
-        images.add(getResources().getDrawable(R.drawable.anders));
-        images.add(getResources().getDrawable(R.drawable.simen));
-        images.add(getResources().getDrawable(R.drawable.sebastian));
 
         names.add("Anders");
         names.add("Simen");
         names.add("Sebastian");
-        names.add("Anders");
-        names.add("Simen");
-        names.add("Sebastian");
-        names.add("Anders");
-        names.add("Simen");
-        names.add("Sebastian");
-    */
-
+        */
     }
 
     public ArrayList<Drawable> getImages() {
@@ -72,5 +58,9 @@ public class Questions extends Application {
 
     public void deleteName(int index) {
         names.remove(index);
+    }
+
+    public int getCount(){
+      return images.size();
     }
 }

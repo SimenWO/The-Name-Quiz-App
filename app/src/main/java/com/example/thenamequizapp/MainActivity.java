@@ -24,13 +24,19 @@ public class MainActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.start);
         manageButton = findViewById(R.id.manage);
+        final int count = ((Questions) this.getApplication()).getCount();
 
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QuizActivity.class);
-                startActivity(intent);
+
+                if (count > 0) {
+                    startActivity(intent);
+                } else {
+                    System.out.println("No questions");
+                }
             }
         });
 
@@ -42,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 
