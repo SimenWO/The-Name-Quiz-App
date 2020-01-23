@@ -56,25 +56,8 @@ public class DatabaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
 
-        images.add(R.drawable.anders);
-        images.add(R.drawable.simen);
-        images.add( R.drawable.sebastian);
-        images.add(R.drawable.anders);
-        images.add(R.drawable.simen);
-        images.add( R.drawable.sebastian);
-        images.add(R.drawable.anders);
-        images.add(R.drawable.simen);
-        images.add( R.drawable.sebastian);
-
-        names.add("Anders");
-        names.add("Simen");
-        names.add("Sebastian");
-        names.add("Anders");
-        names.add("Simen");
-        names.add("Sebastian");
-        names.add("Anders");
-        names.add("Simen");
-        names.add("Sebastian");
+      images = getIntent().getIntegerArrayListExtra("images");
+      names = getIntent().getStringArrayListExtra("names");
 
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerview);
