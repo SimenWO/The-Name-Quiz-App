@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -86,7 +89,10 @@ public class NewPersonActivity extends AppCompatActivity {
                 case 0:
                     if (resultCode == RESULT_OK && data != null) {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
-                        imageButton.setImageBitmap(selectedImage);
+                        Drawable d = new BitmapDrawable(getResources(), selectedImage);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                            imageButton.setBackground(d);
+                        }
                     }
 
                     break;
@@ -102,7 +108,10 @@ public class NewPersonActivity extends AppCompatActivity {
 
                                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                                 String picturePath = cursor.getString(columnIndex);
-                                imageButton.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                                Drawable d = new BitmapDrawable(getResources(), BitmapFactory.decodeFile(picturePath));
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                                    imageButton.setBackground(d);
+                                }
                                 cursor.close();
                             }
                         }
