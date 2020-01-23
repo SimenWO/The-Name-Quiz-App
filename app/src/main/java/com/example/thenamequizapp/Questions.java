@@ -1,30 +1,33 @@
 package com.example.thenamequizapp;
 
 import android.app.Application;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 
 public class Questions extends Application {
 
-    private ArrayList<Integer> images = new ArrayList<>();
+    private ArrayList<Drawable> images = new ArrayList<>();
     private ArrayList<String> names = new ArrayList<>();
 
-    public Questions(ArrayList<Integer> images, ArrayList<String> names) {
+    public Questions(ArrayList<Drawable> images, ArrayList<String> names) {
         this.images = images;
         this.names = names;
 
     }
 
     public Questions() {
-        images.add(R.drawable.anders);
-        images.add(R.drawable.simen);
-        images.add(R.drawable.sebastian);
-        images.add(R.drawable.anders);
-        images.add(R.drawable.simen);
-        images.add(R.drawable.sebastian);
-        images.add(R.drawable.anders);
-        images.add(R.drawable.simen);
-        images.add(R.drawable.sebastian);
+
+        /*
+        images.add(getResources().getDrawable(R.drawable.anders));
+        images.add(getResources().getDrawable(R.drawable.simen));
+        images.add(getResources().getDrawable(R.drawable.sebastian));
+        images.add(getResources().getDrawable(R.drawable.anders));
+        images.add(getResources().getDrawable(R.drawable.simen));
+        images.add(getResources().getDrawable(R.drawable.sebastian));
+        images.add(getResources().getDrawable(R.drawable.anders));
+        images.add(getResources().getDrawable(R.drawable.simen));
+        images.add(getResources().getDrawable(R.drawable.sebastian));
 
         names.add("Anders");
         names.add("Simen");
@@ -35,9 +38,11 @@ public class Questions extends Application {
         names.add("Anders");
         names.add("Simen");
         names.add("Sebastian");
+    */
+
     }
 
-    public ArrayList<Integer> getImages() {
+    public ArrayList<Drawable> getImages() {
         return images;
     }
 
@@ -45,7 +50,7 @@ public class Questions extends Application {
         return names;
     }
 
-    public void setImages(ArrayList<Integer> images) {
+    public void setImages(ArrayList<Drawable> images) {
         this.images = images;
     }
 
@@ -53,7 +58,7 @@ public class Questions extends Application {
         this.names = names;
     }
 
-    public void addImage(int image) {
+    public void addImage(Drawable image) {
         images.add(image);
     }
 

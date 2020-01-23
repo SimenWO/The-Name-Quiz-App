@@ -47,7 +47,7 @@ public class DatabaseActivity extends AppCompatActivity {
     private ImageButton mCamera;
     private Button mAdd;
 
-    private List<Integer> images = new ArrayList<>();
+    private List<Drawable> images = new ArrayList<>();
     private List<String> names = new ArrayList<>();
 
 

@@ -3,18 +3,16 @@ package com.example.thenamequizapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -22,10 +20,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
     List<String> data1;
-    List<Integer> images;
+    List<Drawable> images;
 
 
-    public MyAdapter(Context ct, List<String> s1, List<Integer> img) {
+    public MyAdapter(Context ct, List<String> s1, List<Drawable> img) {
         context = ct;
         data1 = s1;
         images = img;
@@ -43,7 +41,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
         holder.myText.setText(data1.get(position));
-        holder.myImage.setImageResource(images.get(position));
+        holder.myImage.setImageDrawable(images.get(position));
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
