@@ -76,6 +76,15 @@ public class DatabaseActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(DatabaseActivity.this, NewPersonActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                /*
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
 
@@ -105,7 +114,10 @@ public class DatabaseActivity extends AppCompatActivity {
                 AlertDialog dialog = mBuilder.create();
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+                 */
+
             }
+
         });
     }
 

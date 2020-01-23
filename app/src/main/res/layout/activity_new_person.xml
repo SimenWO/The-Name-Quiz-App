@@ -26,7 +26,7 @@
         android:background="@drawable/roundededittext"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
