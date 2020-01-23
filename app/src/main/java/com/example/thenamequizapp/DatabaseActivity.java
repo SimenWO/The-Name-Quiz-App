@@ -56,8 +56,8 @@ public class DatabaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
 
-      images = getIntent().getIntegerArrayListExtra("images");
-      names = getIntent().getStringArrayListExtra("names");
+         images = ((Questions) this.getApplication()).getImages();
+         names = ((Questions) this.getApplication()).getNames();
 
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerview);
@@ -117,6 +117,8 @@ public class DatabaseActivity extends AppCompatActivity {
             if (requestCode == 1) {
                 Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
                 System.out.println(bitmap);
+
+
                 Drawable d = new BitmapDrawable(getResources(), bitmap);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     mCamera.setBackground(d);
