@@ -31,6 +31,8 @@ public class QuizActivity extends AppCompatActivity {
         names = ((Questions) this.getApplication()).getNames();
 
 
+
+
         checkAnswerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

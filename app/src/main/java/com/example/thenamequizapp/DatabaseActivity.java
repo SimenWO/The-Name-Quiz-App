@@ -77,13 +77,8 @@ public class DatabaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                fab.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(DatabaseActivity.this, NewPersonActivity.class);
-                        startActivity(intent);
-                    }
-                });
+                Intent intent = new Intent(DatabaseActivity.this, NewPersonActivity.class);
+                startActivity(intent);
                 /*
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(DatabaseActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.dialogadd, null);
