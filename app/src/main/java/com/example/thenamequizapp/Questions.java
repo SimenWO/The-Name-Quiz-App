@@ -3,6 +3,7 @@ package com.example.thenamequizapp;
 import android.app.Application;
 import android.graphics.drawable.Drawable;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Questions extends Application {
@@ -18,15 +19,7 @@ public class Questions extends Application {
     }
 
     public Questions() {
-        /*
-        images.add(getResources().getDrawable(R.drawable.anders));
-        images.add(getResources().getDrawable(R.drawable.simen));
-        images.add(getResources().getDrawable(R.drawable.sebastian));
 
-        names.add("Anders");
-        names.add("Simen");
-        names.add("Sebastian");
-        */
     }
 
     public ArrayList<Drawable> getImages() {
