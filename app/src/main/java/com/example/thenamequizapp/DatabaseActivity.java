@@ -47,14 +47,34 @@ public class DatabaseActivity extends AppCompatActivity {
     private ImageButton mCamera;
     private Button mAdd;
 
-    private int images[] = {R.drawable.anders, R.drawable.simen, R.drawable.sebastian,R.drawable.anders, R.drawable.simen, R.drawable.sebastian,R.drawable.anders, R.drawable.simen, R.drawable.sebastian};
-    private String names[] = {"Anders", "Simen", "Sebastian","Anders", "Simen", "Sebastian","Anders", "Simen", "Sebastian"};
+    private List<Integer> images = new ArrayList<>();
+    private List<String> names = new ArrayList<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
+
+        images.add(R.drawable.anders);
+        images.add(R.drawable.simen);
+        images.add( R.drawable.sebastian);
+        images.add(R.drawable.anders);
+        images.add(R.drawable.simen);
+        images.add( R.drawable.sebastian);
+        images.add(R.drawable.anders);
+        images.add(R.drawable.simen);
+        images.add( R.drawable.sebastian);
+
+        names.add("Anders");
+        names.add("Simen");
+        names.add("Sebastian");
+        names.add("Anders");
+        names.add("Simen");
+        names.add("Sebastian");
+        names.add("Anders");
+        names.add("Simen");
+        names.add("Sebastian");
 
         fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerview);

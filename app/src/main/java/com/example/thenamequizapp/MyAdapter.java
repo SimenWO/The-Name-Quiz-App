@@ -16,13 +16,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.w3c.dom.Text;
 
+import java.util.List;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
-    String data1[];
-    int images[];
+    List<String> data1;
+    List<Integer> images;
 
-    public MyAdapter(Context ct, String s1[], int img[]) {
+
+    public MyAdapter(Context ct, List<String> s1, List<Integer> img) {
         context = ct;
         data1 = s1;
         images = img;
@@ -39,8 +42,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
-        holder.myText.setText(data1[position]);
-        holder.myImage.setImageResource(images[position]);
+        holder.myText.setText(data1.get(position));
+        holder.myImage.setImageResource(images.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         switch (which){
                             case DialogInterface.BUTTON_POSITIVE:
                                 Log.e("Answer", "Yes");
+                                data1.remove(position);
+                                images.remove(position);
+                                notifyDataSetChanged();
                                 break;
 
                             case DialogInterface.BUTTON_NEGATIVE:
@@ -80,7 +86,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return data1.length;
+        return data1.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
