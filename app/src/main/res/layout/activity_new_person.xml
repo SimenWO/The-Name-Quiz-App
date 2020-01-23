@@ -22,11 +22,11 @@
         android:id="@+id/nameinputfield"
         android:layout_width="215dp"
         android:layout_height="55dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/roundededittext"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Name"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,8 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameinputfield"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.673" />
 </androidx.constraintlayout.widget.ConstraintLayout>

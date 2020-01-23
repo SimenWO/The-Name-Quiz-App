@@ -10,6 +10,7 @@ public class Questions extends Application {
     private ArrayList<Drawable> images = new ArrayList<>();
     private ArrayList<String> names = new ArrayList<>();
 
+
     public Questions(ArrayList<Drawable> images, ArrayList<String> names) {
         this.images = images;
         this.names = names;
@@ -60,7 +61,7 @@ public class Questions extends Application {
         names.remove(index);
     }
 
-    public int getCount(){
-      return images.size();
+    public int getCount() {
+        return images.size();
     }
 }
