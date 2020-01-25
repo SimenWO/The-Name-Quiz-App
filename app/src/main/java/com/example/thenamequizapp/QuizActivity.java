@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
+    TextView correctAnswersText;
     EditText nameInput;
     Button checkAnswerButton;
     ImageView imageOfPerson;
@@ -34,6 +36,7 @@ public class QuizActivity extends AppCompatActivity {
         nameInput = findViewById(R.id.nameInput);
         checkAnswerButton = findViewById(R.id.checkAnswerButton);
         imageOfPerson = findViewById(R.id.imageofperson);
+        correctAnswersText = findViewById(R.id.correctAnswersText);
 
         images = ((Questions) this.getApplication()).getImages();
         names = ((Questions) this.getApplication()).getNames();
@@ -44,15 +47,14 @@ public class QuizActivity extends AppCompatActivity {
         checkAnswerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nameInput.getText().toString().length() > 1) {
-                    if (questionNumber < images.size()) {
+                if(questionNumber < images.size()-1) {
+                    if (checkAnswerButton.getText().toString() == "next") {
                         nextQuestion();
                     } else {
-                      finished();
+                        checkAnswer();
                     }
                 } else {
-                    Toast.makeText(QuizActivity.this, "No text found",
-                            Toast.LENGTH_LONG).show();
+                    finished();
                 }
             }
         });
@@ -63,24 +65,28 @@ public class QuizActivity extends AppCompatActivity {
         imageOfPerson.setImageDrawable(images.get(questionNumber));
     }
 
-    public boolean checkAnswer() {
+    public void checkAnswer() {
         if (names.get(questionNumber).toLowerCase() == nameInput.getText().toString().toLowerCase()) {
-            return true;
+            score++;
+            nextQuestion();
         } else {
-            return false;
-
+            correctAnswersText.setText(names.get(questionNumber));
+            checkAnswerButton.setText("next");
         }
     }
 
-    public void finished(){
+
+    public void finished() {
         Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
         intent.putExtra("score", score);
         startActivity(intent);
     }
 
     public void nextQuestion() {
-        nameInput.setText("");
         questionNumber++;
+        nameInput.setText("");
+        correctAnswersText.setText("");
+        checkAnswerButton.setText("Check Answer");
         imageOfPerson.setImageDrawable(images.get(questionNumber));
 
     }
