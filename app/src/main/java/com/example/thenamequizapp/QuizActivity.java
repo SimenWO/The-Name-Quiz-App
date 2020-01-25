@@ -47,14 +47,18 @@ public class QuizActivity extends AppCompatActivity {
         checkAnswerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (questionNumber < images.size() - 1) {
-                    if (checkAnswerButton.getText().toString() == "next") {
-                        nextQuestion();
+                if (!nameInput.getText().toString().equals("")) {
+                    if (questionNumber < images.size() - 1) {
+                        if (checkAnswerButton.getText().toString() == "next") {
+                            nextQuestion();
+                        } else {
+                            checkAnswer();
+                        }
                     } else {
-                        checkAnswer();
+                        finished();
                     }
                 } else {
-                    finished();
+                    Toast.makeText(QuizActivity.this, "Text box is empty", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -89,6 +93,7 @@ public class QuizActivity extends AppCompatActivity {
         correctAnswersText.setText("");
         checkAnswerButton.setText("Check Answer");
         imageOfPerson.setImageDrawable(images.get(questionNumber));
+
 
     }
 }
