@@ -1,27 +1,24 @@
 package com.example.thenamequizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
+import android.content.DialogInterface;
+import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.EditText;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.widget.Button;
 import android.widget.Toast;
-
-import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+import android.view.View;
+import android.os.Bundle;
+import android.os.Build;
+import android.net.Uri;
 
 public class NewPersonActivity extends AppCompatActivity {
 

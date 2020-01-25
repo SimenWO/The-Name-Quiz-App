@@ -1,26 +1,14 @@
 package com.example.thenamequizapp;
 
-import android.app.Application;
-import android.graphics.drawable.Drawable;
 
-import java.lang.reflect.Array;
+import android.graphics.drawable.Drawable;
+import android.app.Application;
 import java.util.ArrayList;
 
 public class Questions extends Application {
 
     private ArrayList<Drawable> images = new ArrayList<>();
     private ArrayList<String> names = new ArrayList<>();
-
-
-    public Questions(ArrayList<Drawable> images, ArrayList<String> names) {
-        this.images = images;
-        this.names = names;
-
-    }
-
-    public Questions() {
-
-    }
 
     public ArrayList<Drawable> getImages() {
         return images;
