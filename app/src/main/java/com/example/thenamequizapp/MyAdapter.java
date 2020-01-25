@@ -1,10 +1,13 @@
 package com.example.thenamequizapp;
 
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.graphics.drawable.Drawable;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
+
 import androidx.annotation.NonNull;
+
 import android.widget.ImageView;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -22,6 +25,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Drawable> images;
 
 
+    /**
+     * Constructor for the adapter.
+     *
+     * @param ct
+     * @param s1
+     * @param img
+     */
     public MyAdapter(Context ct, List<String> s1, List<Drawable> img) {
         context = ct;
         data1 = s1;
@@ -36,6 +46,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return new MyViewHolder(view);
     }
 
+    /**
+     * Sets the individual elements in the list.
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
@@ -43,13 +59,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.myImage.setImageDrawable(images.get(position));
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                System.out.println("The position is: " + position);
-            }
-        });
-
+        /**
+         * When long clicking the element a dialog pops up, and you can delete the element.
+         */
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -80,6 +92,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
     }
+
+    /**
+     * returns the size of the list.
+     *
+     * @return The size of the list
+     */
 
     @Override
     public int getItemCount() {

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /**
-         *  Starts new activity
+         *  Starts new activity.
          */
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         /**
-         *  Starts new activity
+         *  Starts new activity.
          */
         manageButton.setOnClickListener(new View.OnClickListener() {
             @Override

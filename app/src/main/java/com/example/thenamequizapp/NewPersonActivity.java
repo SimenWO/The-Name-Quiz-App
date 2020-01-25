@@ -1,6 +1,7 @@
 package com.example.thenamequizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.content.DialogInterface;
@@ -38,6 +39,9 @@ public class NewPersonActivity extends AppCompatActivity {
         nameText = findViewById(R.id.nameinputfield);
 
 
+        /**
+         *  For opening the NewPerson activity
+         */
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,13 +49,16 @@ public class NewPersonActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         *  If an image and a name are chosen they are stored in the global lists
+         */
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (savedImage != null && !nameText.getText().toString().equals("")) {
                     save();
-                } else{
+                } else {
                     Toast.makeText(NewPersonActivity.this, "You need to add a name",
                             Toast.LENGTH_LONG).show();
                 }
@@ -61,12 +68,21 @@ public class NewPersonActivity extends AppCompatActivity {
 
     }
 
+
+    /**
+     * Saves the image and the name to the global lists
+     */
     public void save() {
         ((Questions) this.getApplication()).addImage(savedImage);
         ((Questions) this.getApplication()).addName(nameText.getText().toString());
         finish();
     }
 
+    /**
+     * Dialog for camera and gallery
+     *
+     * @param context
+     */
     private void selectImage(Context context) {
         final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
 
@@ -94,6 +110,13 @@ public class NewPersonActivity extends AppCompatActivity {
         builder.show();
     }
 
+    /**
+     * Function for dealing with gallery and camera
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
