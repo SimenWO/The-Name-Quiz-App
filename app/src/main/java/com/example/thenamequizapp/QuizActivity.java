@@ -55,7 +55,14 @@ public class QuizActivity extends AppCompatActivity {
                             checkAnswer();
                         }
                     } else {
-                        finished();
+                        if (nameInput.getText().toString().toLowerCase().equals(names.get(questionNumber).toLowerCase())) {
+                            finished();
+                        } else {
+                            checkAnswer();
+                            if (checkAnswerButton.getText().toString() == "next") {
+                                finished();
+                            }
+                        }
                     }
                 } else {
                     Toast.makeText(QuizActivity.this, "Text box is empty", Toast.LENGTH_SHORT).show();
@@ -76,6 +83,7 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             correctAnswersText.setText(names.get(questionNumber));
             checkAnswerButton.setText("next");
+
             System.out.println(names.get(questionNumber).toLowerCase() + " " + nameInput.getText().toString().toLowerCase());
         }
     }
