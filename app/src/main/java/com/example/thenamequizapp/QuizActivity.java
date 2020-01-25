@@ -26,6 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     private List<String> names = new ArrayList<>();
 
     int score = 0;
+    int amountOfQuestions = 0;
     int questionNumber = 0;
 
     @Override
@@ -41,6 +42,7 @@ public class QuizActivity extends AppCompatActivity {
         images = ((Questions) this.getApplication()).getImages();
         names = ((Questions) this.getApplication()).getNames();
 
+        amountOfQuestions = images.size();
         startQuiz();
 
 
@@ -91,6 +93,7 @@ public class QuizActivity extends AppCompatActivity {
     public void finished() {
         Intent intent = new Intent(QuizActivity.this, ResultActivity.class);
         intent.putExtra("score", score);
+        intent.putExtra("amount", amountOfQuestions);
         startActivity(intent);
     }
 
