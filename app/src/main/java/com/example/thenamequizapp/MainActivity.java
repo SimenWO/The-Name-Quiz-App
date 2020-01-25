@@ -23,18 +23,19 @@ public class MainActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.start);
         manageButton = findViewById(R.id.manage);
+
         final int count = ((Questions) this.getApplication()).getCount();
 
+        /**
+         * If the count is 0 then all of the names and images will be added to the global lists.
+         */
         if (count == 0) {
-            ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.anders));
-            ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.simen));
-            ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.sebastian));
-
-            ((Questions) this.getApplication()).addName("Anders");
-            ((Questions) this.getApplication()).addName("Simen");
-            ((Questions) this.getApplication()).addName("Sebastian");
+            addQuestions();
         }
 
+        /**
+         *  Starts new activity
+         */
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        /**
+         *  Starts new activity
+         */
         manageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Add images and names of the people in our group.
+     */
     public void addQuestions() {
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.anders));
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.simen));
