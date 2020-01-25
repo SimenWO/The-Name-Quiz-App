@@ -48,7 +48,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!nameInput.getText().toString().equals("")) {
-                    if (questionNumber < images.size() - 1) {
+                    if (questionNumber < images.size()) {
                         if (checkAnswerButton.getText().toString() == "next") {
                             nextQuestion();
                         } else {
@@ -56,6 +56,7 @@ public class QuizActivity extends AppCompatActivity {
                         }
                     } else {
                         if (nameInput.getText().toString().toLowerCase().equals(names.get(questionNumber).toLowerCase())) {
+
                             finished();
                         } else {
                             checkAnswer();
@@ -81,7 +82,7 @@ public class QuizActivity extends AppCompatActivity {
             score++;
             nextQuestion();
         } else {
-            correctAnswersText.setText(names.get(questionNumber));
+            correctAnswersText.setText("Correct Answer: " + names.get(questionNumber));
             checkAnswerButton.setText("next");
 
             System.out.println(names.get(questionNumber).toLowerCase() + " " + nameInput.getText().toString().toLowerCase());
@@ -100,8 +101,12 @@ public class QuizActivity extends AppCompatActivity {
         nameInput.setText("");
         correctAnswersText.setText("");
         checkAnswerButton.setText("Check Answer");
-        imageOfPerson.setImageDrawable(images.get(questionNumber));
 
+        if(questionNumber > images.size()-1){
+            finished();
+        } else {
+            imageOfPerson.setImageDrawable(images.get(questionNumber));
+        }
 
     }
 }
