@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
@@ -51,8 +52,11 @@ public class NewPersonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (savedImage != null && nameText.getText().toString() != "") {
+                if (savedImage != null && !nameText.getText().toString().equals("")) {
                     save();
+                } else{
+                    Toast.makeText(NewPersonActivity.this, "You need to add a name",
+                            Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -63,12 +67,6 @@ public class NewPersonActivity extends AppCompatActivity {
     public void save() {
         ((Questions) this.getApplication()).addImage(savedImage);
         ((Questions) this.getApplication()).addName(nameText.getText().toString());
-       /*
-        Intent i = new Intent(NewPersonActivity.this, DatabaseActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(i);
-
-        */
         finish();
     }
 
@@ -98,7 +96,6 @@ public class NewPersonActivity extends AppCompatActivity {
         });
         builder.show();
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
