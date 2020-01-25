@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         final int count = ((Questions) this.getApplication()).getCount();
 
 
-
-
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.anders));
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.simen));
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.sebastian));
+
         ((Questions) this.getApplication()).addName("anders");
         ((Questions) this.getApplication()).addName("simen");
         ((Questions) this.getApplication()).addName("sebastian");
