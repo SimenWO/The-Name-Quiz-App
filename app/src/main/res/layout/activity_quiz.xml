@@ -34,7 +34,7 @@
         android:id="@+id/nameInput"
         android:layout_width="199dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/roundededittext"
         android:ems="10"
         android:hint="Name"
@@ -42,33 +42,33 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:textColorHint="#999898"
-        app:layout_constraintBottom_toTopOf="@+id/checkAnswerButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageofperson" />
 
     <Button
         android:id="@+id/checkAnswerButton"
         android:layout_width="148dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
         android:text="Check answer"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/correctAnswersText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20dp"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="sdf"
         android:textColor="#FF0000"
-        app:layout_constraintBottom_toTopOf="@+id/nameInput"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkAnswerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageofperson" />
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
