@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.os.Bundle;
 import android.view.View;
@@ -43,6 +44,8 @@ public class QuizActivity extends AppCompatActivity {
          * Fetches the lists from the global class.
          */
         people = ((Questions) this.getApplication()).getPeople();
+        Collections.shuffle(people);
+
 
         amountOfQuestions = people.size();
 
