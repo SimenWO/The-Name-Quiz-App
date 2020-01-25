@@ -22,6 +22,11 @@ public class DatabaseActivity extends AppCompatActivity {
     private List<Drawable> images = new ArrayList<>();
     private List<String> names = new ArrayList<>();
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +62,4 @@ public class DatabaseActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        recreate();
-    }
 }

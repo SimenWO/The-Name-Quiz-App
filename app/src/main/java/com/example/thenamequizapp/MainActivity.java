@@ -14,27 +14,32 @@ public class MainActivity extends AppCompatActivity {
     ImageButton startButton;
     Button manageButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initImages();
+
 
         startButton = findViewById(R.id.start);
         manageButton = findViewById(R.id.manage);
         final int count = ((Questions) this.getApplication()).getCount();
 
+        if (count == 0) {
+            ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.anders));
+            ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.simen));
+            ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.sebastian));
+
+            ((Questions) this.getApplication()).addName("Anders");
+            ((Questions) this.getApplication()).addName("Simen");
+            ((Questions) this.getApplication()).addName("Sebastian");
+        }
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QuizActivity.class);
-
-                if (count > 0) {
-                    startActivity(intent);
-                } else {
-                    System.out.println("No questions");
-                }
+                startActivity(intent);
             }
         });
 
@@ -50,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void initImages() {
-
-
+    public void addQuestions() {
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.anders));
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.simen));
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.sebastian));
@@ -60,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
         ((Questions) this.getApplication()).addName("Anders");
         ((Questions) this.getApplication()).addName("Simen");
         ((Questions) this.getApplication()).addName("Sebastian");
-
     }
-
 
 }
