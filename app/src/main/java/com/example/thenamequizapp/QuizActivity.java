@@ -84,8 +84,6 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             correctAnswersText.setText("Correct Answer: " + names.get(questionNumber));
             checkAnswerButton.setText("next");
-
-            System.out.println(names.get(questionNumber).toLowerCase() + " " + nameInput.getText().toString().toLowerCase());
         }
     }
 

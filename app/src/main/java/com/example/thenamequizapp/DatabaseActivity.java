@@ -110,4 +110,10 @@ public class DatabaseActivity extends AppCompatActivity {
 
         });
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
 }

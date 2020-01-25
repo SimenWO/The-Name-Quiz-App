@@ -53,7 +53,6 @@ public class NewPersonActivity extends AppCompatActivity {
 
                 if (savedImage != null && nameText.getText().toString() != "") {
                     save();
-
                 }
 
             }
@@ -64,9 +63,12 @@ public class NewPersonActivity extends AppCompatActivity {
     public void save() {
         ((Questions) this.getApplication()).addImage(savedImage);
         ((Questions) this.getApplication()).addName(nameText.getText().toString());
+       /*
         Intent i = new Intent(NewPersonActivity.this, DatabaseActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
+
+        */
         finish();
     }
 
