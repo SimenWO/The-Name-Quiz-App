@@ -2,15 +2,12 @@ package com.example.thenamequizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.content.Intent;
+import android.widget.Button;
+import android.view.View;
+import android.os.Bundle;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -25,7 +25,7 @@ public class ResultActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         int score = bundle.getInt("score");
-        scoreText.setText(""+score);
+        scoreText.setText("" + score);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +37,7 @@ public class ResultActivity extends AppCompatActivity {
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ResultActivity.this, QuizActivity.class));
-
+                finish();
 
             }
         });

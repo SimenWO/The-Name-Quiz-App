@@ -1,18 +1,17 @@
 package com.example.thenamequizapp;
 
+import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.drawable.Drawable;
+import android.content.DialogInterface;
+import android.view.LayoutInflater;
+import androidx.annotation.NonNull;
+import android.widget.ImageView;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
+import android.view.View;
+import android.util.Log;
 
 import java.util.List;
 

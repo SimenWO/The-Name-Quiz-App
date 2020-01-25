@@ -107,4 +107,9 @@ public class QuizActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
 }
