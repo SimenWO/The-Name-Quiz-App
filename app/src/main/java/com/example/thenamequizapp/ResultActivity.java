@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
     ImageButton homeButton;
     ImageButton restartButton;
+    TextView scoreText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,11 @@ public class ResultActivity extends AppCompatActivity {
 
         homeButton = findViewById(R.id.homeButton);
         restartButton = findViewById(R.id.restartButton);
+        scoreText = findViewById(R.id.scoreText);
+
+        Bundle bundle = getIntent().getExtras();
+        int score = bundle.getInt("score");
+        scoreText.setText(""+score);
 
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override

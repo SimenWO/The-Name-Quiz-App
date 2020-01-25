@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.simen));
         ((Questions) this.getApplication()).addImage(getResources().getDrawable(R.drawable.sebastian));
 
-        ((Questions) this.getApplication()).addName("anders");
-        ((Questions) this.getApplication()).addName("simen");
-        ((Questions) this.getApplication()).addName("sebastian");
+        ((Questions) this.getApplication()).addName("Anders");
+        ((Questions) this.getApplication()).addName("Simen");
+        ((Questions) this.getApplication()).addName("Sebastian");
 
     }
 

@@ -47,7 +47,7 @@ public class QuizActivity extends AppCompatActivity {
         checkAnswerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(questionNumber < images.size()-1) {
+                if (questionNumber < images.size() - 1) {
                     if (checkAnswerButton.getText().toString() == "next") {
                         nextQuestion();
                     } else {
@@ -66,12 +66,13 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void checkAnswer() {
-        if (names.get(questionNumber).toLowerCase() == nameInput.getText().toString().toLowerCase()) {
+        if (names.get(questionNumber).toLowerCase().equals(nameInput.getText().toString().toLowerCase())) {
             score++;
             nextQuestion();
         } else {
             correctAnswersText.setText(names.get(questionNumber));
             checkAnswerButton.setText("next");
+            System.out.println(names.get(questionNumber).toLowerCase() + " " + nameInput.getText().toString().toLowerCase());
         }
     }
 
