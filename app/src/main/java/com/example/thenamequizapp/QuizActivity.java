@@ -44,6 +44,10 @@ public class QuizActivity extends AppCompatActivity {
          * Fetches the lists from the global class.
          */
         people = ((Questions) this.getApplication()).getPeople();
+
+        /**
+         * Shuffles the list
+         */
         Collections.shuffle(people);
 
 
@@ -100,9 +104,10 @@ public class QuizActivity extends AppCompatActivity {
     public void checkAnswer() {
         if (people.get(questionNumber).getName().toLowerCase().equals(nameInput.getText().toString().toLowerCase())) {
             score++;
-            nextQuestion();
+            correctAnswersText.setText("Correct!");
+            checkAnswerButton.setText("next");
         } else {
-            correctAnswersText.setText("Correct Answer: " + people.get(questionNumber).getName());
+            correctAnswersText.setText("Wrong! " + people.get(questionNumber).getName());
             checkAnswerButton.setText("next");
         }
     }
