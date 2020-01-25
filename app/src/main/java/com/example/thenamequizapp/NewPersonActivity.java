@@ -21,6 +21,8 @@ import android.os.Bundle;
 import android.os.Build;
 import android.net.Uri;
 
+import javax.xml.transform.Templates;
+
 public class NewPersonActivity extends AppCompatActivity {
 
 
@@ -73,8 +75,7 @@ public class NewPersonActivity extends AppCompatActivity {
      * Saves the image and the name to the global lists
      */
     public void save() {
-        ((Questions) this.getApplication()).addImage(savedImage);
-        ((Questions) this.getApplication()).addName(nameText.getText().toString());
+        ((Questions) this.getApplication()).addPerson(savedImage, nameText.getText().toString());
         finish();
     }
 

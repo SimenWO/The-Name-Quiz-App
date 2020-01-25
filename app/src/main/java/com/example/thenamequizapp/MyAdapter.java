@@ -13,29 +13,27 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.widget.TextView;
 import android.view.ViewGroup;
+import java.util.ArrayList;
 import android.view.View;
 import android.util.Log;
 
-import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
-    List<String> data1;
-    List<Drawable> images;
+    ArrayList<Person> people;
+
 
 
     /**
      * Constructor for the adapter.
      *
      * @param ct
-     * @param s1
-     * @param img
      */
-    public MyAdapter(Context ct, List<String> s1, List<Drawable> img) {
+    public MyAdapter(Context ct, ArrayList<Person> people) {
         context = ct;
-        data1 = s1;
-        images = img;
+        this.people = people;
+
     }
 
     @NonNull
@@ -55,8 +53,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
-        holder.myText.setText(data1.get(position));
-        holder.myImage.setImageDrawable(images.get(position));
+        holder.myText.setText(people.get(position).getName());
+        holder.myImage.setImageDrawable(people.get(position).getImage());
 
 
         /**
@@ -72,8 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         switch (which) {
                             case DialogInterface.BUTTON_POSITIVE:
                                 Log.e("Answer", "Yes");
-                                data1.remove(position);
-                                images.remove(position);
+                                people.remove(position);
                                 notifyDataSetChanged();
                                 break;
 
@@ -101,7 +98,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return data1.size();
+        return people.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

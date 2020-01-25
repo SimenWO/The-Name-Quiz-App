@@ -15,8 +15,6 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.List;
-
 public class QuizActivity extends AppCompatActivity {
 
     TextView correctAnswersText;
@@ -24,8 +22,8 @@ public class QuizActivity extends AppCompatActivity {
     Button checkAnswerButton;
     ImageView imageOfPerson;
 
-    private List<Drawable> images = new ArrayList<>();
-    private List<String> names = new ArrayList<>();
+    private ArrayList<Person> people = new ArrayList<>();
+
 
     int score = 0;
     int amountOfQuestions = 0;
@@ -44,10 +42,9 @@ public class QuizActivity extends AppCompatActivity {
         /**
          * Fetches the lists from the global class.
          */
-        images = ((Questions) this.getApplication()).getImages();
-        names = ((Questions) this.getApplication()).getNames();
+        people = ((Questions) this.getApplication()).getPeople();
 
-        amountOfQuestions = images.size();
+        amountOfQuestions = people.size();
 
         /**
          * Sets the first image to start the quiz.
@@ -61,14 +58,14 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!nameInput.getText().toString().equals("")) {
-                    if (questionNumber < images.size()) {
+                    if (questionNumber < people.size()) {
                         if (checkAnswerButton.getText().toString() == "next") {
                             nextQuestion();
                         } else {
                             checkAnswer();
                         }
                     } else {
-                        if (nameInput.getText().toString().toLowerCase().equals(names.get(questionNumber).toLowerCase())) {
+                        if (nameInput.getText().toString().toLowerCase().equals(people.get(questionNumber).getName().toLowerCase())) {
 
                             finished();
                         } else {
@@ -90,7 +87,7 @@ public class QuizActivity extends AppCompatActivity {
      * Sets the first image to start the quiz.
      */
     public void startQuiz() {
-        imageOfPerson.setImageDrawable(images.get(questionNumber));
+        imageOfPerson.setImageDrawable(people.get(questionNumber).getImage());
     }
 
     /**
@@ -98,11 +95,11 @@ public class QuizActivity extends AppCompatActivity {
      * If image matches the name inputted by the user the score is increased and the next question is showed.
      */
     public void checkAnswer() {
-        if (names.get(questionNumber).toLowerCase().equals(nameInput.getText().toString().toLowerCase())) {
+        if (people.get(questionNumber).getName().toLowerCase().equals(nameInput.getText().toString().toLowerCase())) {
             score++;
             nextQuestion();
         } else {
-            correctAnswersText.setText("Correct Answer: " + names.get(questionNumber));
+            correctAnswersText.setText("Correct Answer: " + people.get(questionNumber).getName());
             checkAnswerButton.setText("next");
         }
     }
@@ -126,10 +123,10 @@ public class QuizActivity extends AppCompatActivity {
         correctAnswersText.setText("");
         checkAnswerButton.setText("Check Answer");
 
-        if (questionNumber > images.size() - 1) {
+        if (questionNumber > people.size() - 1) {
             finished();
         } else {
-            imageOfPerson.setImageDrawable(images.get(questionNumber));
+            imageOfPerson.setImageDrawable(people.get(questionNumber).getImage());
         }
     }
 

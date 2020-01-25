@@ -8,62 +8,33 @@ import java.util.ArrayList;
 
 public class Questions extends Application {
 
-    private ArrayList<Drawable> images = new ArrayList<>();
-    private ArrayList<String> names = new ArrayList<>();
+    private ArrayList<Person> people = new ArrayList<>();
 
     /**
-     * Return ArrayList of the images.
-     *
-     * @return
-     */
-    public ArrayList<Drawable> getImages() {
-        return images;
-    }
-
-    /**
-     * Return ArrayList of the names.
-     *
-     * @return
-     */
-    public ArrayList<String> getNames() {
-        return names;
-    }
-
-    /**
-     * Function for adding an image to the list.
      *
      * @param image
-     */
-    public void addImage(Drawable image) {
-        images.add(image);
-    }
-
-    /**
-     * Function for adding a name to the list.
-     *
      * @param name
      */
-    public void addName(String name) {
-        names.add(name);
+    public void addPerson(Drawable image, String name){
+        people.add(new Person(image, name));
     }
 
     /**
-     * Function for deleting an image from the list given an index.
      *
-     * @param index
+     * @return
      */
-    public void deleteImage(int index) {
-        images.remove(index);
+    public ArrayList<Person> getPeople(){
+        return people;
     }
 
     /**
-     * Function for deleting a name from the list given an index.
      *
      * @param index
      */
-    public void deleteName(int index) {
-        names.remove(index);
+    public void deletePerson(int index){
+        people.remove(index);
     }
+
 
     /**
      * Function for getting list count.
@@ -71,6 +42,6 @@ public class Questions extends Application {
      * @return list length
      */
     public int getCount() {
-        return images.size();
+        return people.size();
     }
 }

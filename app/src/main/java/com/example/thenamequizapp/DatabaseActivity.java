@@ -20,8 +20,8 @@ import java.util.List;
 
 public class DatabaseActivity extends AppCompatActivity {
 
-    private List<Drawable> images = new ArrayList<>();
-    private List<String> names = new ArrayList<>();
+    private ArrayList<Person> people = new ArrayList<>();
+
     private RecyclerView recyclerView;
     private FloatingActionButton fab;
 
@@ -43,8 +43,7 @@ public class DatabaseActivity extends AppCompatActivity {
         /**
          *  Fetches images and names from the global class Questions.
          */
-        images = ((Questions) this.getApplication()).getImages();
-        names = ((Questions) this.getApplication()).getNames();
+        people = ((Questions) this.getApplication()).getPeople();
 
         /**
          *  Connecting the fab and the recyclerView.
@@ -55,7 +54,7 @@ public class DatabaseActivity extends AppCompatActivity {
         /**
          * MyAdapter for handling the RecyclerView.
          */
-        MyAdapter myAdapter = new MyAdapter(this, names, images);
+        MyAdapter myAdapter = new MyAdapter(this, people);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
