@@ -7,15 +7,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.Drawable;
 import android.content.Intent;
 
 import java.util.ArrayList;
 
 import android.view.View;
 import android.os.Bundle;
-
-import java.util.List;
 
 
 public class DatabaseActivity extends AppCompatActivity {
