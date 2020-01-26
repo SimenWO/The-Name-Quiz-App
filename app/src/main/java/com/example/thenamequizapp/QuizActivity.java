@@ -2,6 +2,7 @@ package com.example.thenamequizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import android.widget.EditText;
@@ -105,9 +106,11 @@ public class QuizActivity extends AppCompatActivity {
         if (people.get(questionNumber).getName().toLowerCase().equals(nameInput.getText().toString().toLowerCase())) {
             score++;
             correctAnswersText.setText("Correct!");
+            correctAnswersText.setTextColor(Color.GREEN);
             checkAnswerButton.setText("next");
         } else {
             correctAnswersText.setText("Wrong! " + people.get(questionNumber).getName());
+            correctAnswersText.setTextColor(Color.RED);
             checkAnswerButton.setText("next");
         }
     }
