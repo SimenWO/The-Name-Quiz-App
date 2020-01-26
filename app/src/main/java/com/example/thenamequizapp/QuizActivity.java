@@ -22,6 +22,7 @@ public class QuizActivity extends AppCompatActivity {
     EditText nameInput;
     Button checkAnswerButton;
     ImageView imageOfPerson;
+    TextView scoreoutof;
 
     private ArrayList<Person> people = new ArrayList<>();
 
@@ -39,6 +40,7 @@ public class QuizActivity extends AppCompatActivity {
         checkAnswerButton = findViewById(R.id.checkAnswerButton);
         imageOfPerson = findViewById(R.id.imageofperson);
         correctAnswersText = findViewById(R.id.correctAnswersText);
+        scoreoutof = findViewById(R.id.scoreoutof);
 
         /**
          * Fetches the lists from the global class.
@@ -95,6 +97,7 @@ public class QuizActivity extends AppCompatActivity {
      */
     public void startQuiz() {
         imageOfPerson.setImageDrawable(people.get(questionNumber).getImage());
+        scoreoutof.setText("Score: " + score + "/" + people.size());
     }
 
     /**
@@ -131,6 +134,7 @@ public class QuizActivity extends AppCompatActivity {
         questionNumber++;
         nameInput.setText("");
         correctAnswersText.setText("");
+        scoreoutof.setText("Score: " + score + "/" + people.size());
         checkAnswerButton.setText("Check Answer");
 
         if (questionNumber > people.size() - 1) {
