@@ -16,11 +16,11 @@
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewPersonActivity"></activity>
-        <activity android:name=".ResultActivity" />
-        <activity android:name=".QuizActivity" />
-        <activity android:name=".DatabaseActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.NewPersonActivity"></activity>
+        <activity android:name=".activities.ResultActivity" />
+        <activity android:name=".activities.QuizActivity" />
+        <activity android:name=".activities.DatabaseActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

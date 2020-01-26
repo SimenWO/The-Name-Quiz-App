@@ -1,4 +1,4 @@
-package com.example.thenamequizapp;
+package com.example.thenamequizapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +20,9 @@ import android.view.View;
 import android.os.Bundle;
 import android.os.Build;
 import android.net.Uri;
+
+import com.example.thenamequizapp.Questions;
+import com.example.thenamequizapp.R;
 
 public class NewPersonActivity extends AppCompatActivity {
 

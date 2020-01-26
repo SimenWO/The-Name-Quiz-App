@@ -1,6 +1,10 @@
-package com.example.thenamequizapp;
+package com.example.thenamequizapp.activities;
 
 
+import com.example.thenamequizapp.MyAdapter;
+import com.example.thenamequizapp.Person;
+import com.example.thenamequizapp.Questions;
+import com.example.thenamequizapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.recyclerview.widget.LinearLayoutManager;

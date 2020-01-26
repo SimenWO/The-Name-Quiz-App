@@ -1,4 +1,4 @@
-package com.example.thenamequizapp;
+package com.example.thenamequizapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,10 @@ import java.util.Collections;
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.thenamequizapp.Person;
+import com.example.thenamequizapp.Questions;
+import com.example.thenamequizapp.R;
 
 public class QuizActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.thenamequizapp;
+package com.example.thenamequizapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.view.View;
 import android.os.Bundle;
+
+import com.example.thenamequizapp.R;
 
 public class ResultActivity extends AppCompatActivity {
 
