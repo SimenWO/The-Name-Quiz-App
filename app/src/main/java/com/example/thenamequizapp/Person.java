@@ -7,16 +7,32 @@ public class Person {
     Drawable image;
     String name;
 
-    Person(Drawable image, String name){
+    /**
+     * Constructor for the Person class
+     *
+     * @param image
+     * @param name
+     */
+    Person(Drawable image, String name) {
         this.image = image;
         this.name = name;
     }
 
-    public Drawable getImage(){
+    /**
+     * Get the image
+     *
+     * @return
+     */
+    public Drawable getImage() {
         return image;
     }
 
-    public String getName(){
+    /**
+     * Get the name
+     *
+     * @return
+     */
+    public String getName() {
         return name;
     }
 

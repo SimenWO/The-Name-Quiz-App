@@ -21,8 +21,6 @@ import android.os.Bundle;
 import android.os.Build;
 import android.net.Uri;
 
-import javax.xml.transform.Templates;
-
 public class NewPersonActivity extends AppCompatActivity {
 
 

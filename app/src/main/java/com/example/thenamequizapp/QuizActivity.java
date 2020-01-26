@@ -2,11 +2,10 @@ package com.example.thenamequizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.graphics.Color;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.Toast;

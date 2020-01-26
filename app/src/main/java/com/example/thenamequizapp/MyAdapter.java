@@ -2,7 +2,6 @@ package com.example.thenamequizapp;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.drawable.Drawable;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
 
@@ -13,7 +12,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.widget.TextView;
 import android.view.ViewGroup;
+
 import java.util.ArrayList;
+
 import android.view.View;
 import android.util.Log;
 
@@ -22,7 +23,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<Person> people;
-
 
 
     /**

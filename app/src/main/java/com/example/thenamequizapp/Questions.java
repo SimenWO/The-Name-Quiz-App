@@ -11,27 +11,24 @@ public class Questions extends Application {
     private ArrayList<Person> people = new ArrayList<>();
 
     /**
-     *
      * @param image
      * @param name
      */
-    public void addPerson(Drawable image, String name){
+    public void addPerson(Drawable image, String name) {
         people.add(new Person(image, name));
     }
 
     /**
-     *
      * @return
      */
-    public ArrayList<Person> getPeople(){
+    public ArrayList<Person> getPeople() {
         return people;
     }
 
     /**
-     *
      * @param index
      */
-    public void deletePerson(int index){
+    public void deletePerson(int index) {
         people.remove(index);
     }
 
