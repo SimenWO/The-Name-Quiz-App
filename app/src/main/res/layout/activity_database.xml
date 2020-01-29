@@ -21,7 +21,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/question_list"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="40dp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
