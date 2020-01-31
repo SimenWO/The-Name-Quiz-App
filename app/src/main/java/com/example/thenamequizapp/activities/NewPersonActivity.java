@@ -26,17 +26,23 @@ import com.example.thenamequizapp.R;
 
 public class NewPersonActivity extends AppCompatActivity {
 
+    private ImageButton imageButton;
+    private Button saveButton;
+    private EditText nameText;
+    private Drawable savedImage;
+    private String [] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.ACCESS_FINE_LOCATION", "android.permission.READ_PHONE_STATE", "android.permission.SYSTEM_ALERT_WINDOW","android.permission.CAMERA"};
 
-    ImageButton imageButton;
-    Button saveButton;
-    EditText nameText;
-    Drawable savedImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_person);
 
+        int requestCode = 200;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(permissions, requestCode);
+        }
         imageButton = findViewById(R.id.imageview);
         saveButton = findViewById(R.id.savebutton);
         nameText = findViewById(R.id.nameinputfield);
@@ -86,6 +92,8 @@ public class NewPersonActivity extends AppCompatActivity {
      * @param context
      */
     private void selectImage(Context context) {
+
+
         final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -97,12 +105,12 @@ public class NewPersonActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int item) {
 
                 if (options[item].equals("Take Photo")) {
-                    Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(takePicture, 0);
 
                 } else if (options[item].equals("Choose from Gallery")) {
-                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(pickPhoto, 1);//one can be replaced with any action code
+                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(pickPhoto, 1);
 
                 } else if (options[item].equals("Cancel")) {
                     dialog.dismiss();

@@ -26,7 +26,6 @@ public class DatabaseActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FloatingActionButton fab;
 
-
     /**
      * When NewPersonActivity is finished() the activity will be recreated.
      */
