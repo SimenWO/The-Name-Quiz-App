@@ -17,8 +17,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public SQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
-
-        //queryData("CREATE TABLE IF NOT EXISTS PEOPLE(id VARCHAR PRIMARY KEY, image BLOB, name VARCHAR)");
     }
 
     public void queryData(String sql) {
