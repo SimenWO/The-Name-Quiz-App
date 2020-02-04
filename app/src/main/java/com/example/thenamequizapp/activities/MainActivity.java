@@ -2,21 +2,26 @@ package com.example.thenamequizapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+
+import com.example.thenamequizapp.SQLiteHelper;
+import com.example.thenamequizapp.Questions;
+
 import android.graphics.drawable.Drawable;
+import android.content.SharedPreferences;
+
+import android.graphics.BitmapFactory;
+
+import com.example.thenamequizapp.R;
+
 import android.widget.ImageButton;
+
+import android.database.Cursor;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.Toast;
 import android.view.View;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import com.example.thenamequizapp.Questions;
-import com.example.thenamequizapp.R;
-import com.example.thenamequizapp.SQLiteHelper;
 
 
 public class MainActivity extends AppCompatActivity {

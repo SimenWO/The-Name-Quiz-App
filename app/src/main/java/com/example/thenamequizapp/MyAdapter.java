@@ -1,5 +1,7 @@
 package com.example.thenamequizapp;
 
+import com.example.thenamequizapp.activities.MainActivity;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
@@ -17,8 +19,6 @@ import java.util.ArrayList;
 
 import android.view.View;
 import android.util.Log;
-
-import com.example.thenamequizapp.activities.MainActivity;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {

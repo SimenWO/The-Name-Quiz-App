@@ -2,23 +2,26 @@ package com.example.thenamequizapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.thenamequizapp.Questions;
+import com.example.thenamequizapp.Person;
+import com.example.thenamequizapp.R;
+
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.content.Intent;
+
+import java.util.Collections;
+
 import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.thenamequizapp.Person;
-import com.example.thenamequizapp.Questions;
-import com.example.thenamequizapp.R;
 
 public class QuizActivity extends AppCompatActivity {
 

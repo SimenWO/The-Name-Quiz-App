@@ -1,11 +1,19 @@
 package com.example.thenamequizapp.activities;
 
+import static com.example.thenamequizapp.activities.MainActivity.sqLiteHelper;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.BitmapDrawable;
+
+import com.example.thenamequizapp.Questions;
+
 import android.graphics.drawable.Drawable;
 import android.content.DialogInterface;
 import android.graphics.BitmapFactory;
+
+import com.example.thenamequizapp.R;
+
 import android.provider.MediaStore;
 import android.widget.ImageButton;
 import android.widget.EditText;
@@ -21,12 +29,8 @@ import android.os.Bundle;
 import android.os.Build;
 import android.net.Uri;
 
-import com.example.thenamequizapp.Questions;
-import com.example.thenamequizapp.R;
-
 import java.util.UUID;
 
-import static com.example.thenamequizapp.activities.MainActivity.sqLiteHelper;
 
 public class NewPersonActivity extends AppCompatActivity {
 
