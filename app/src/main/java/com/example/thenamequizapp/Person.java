@@ -2,9 +2,6 @@ package com.example.thenamequizapp;
 
 import android.graphics.drawable.Drawable;
 
-import java.util.UUID;
-
-
 public class Person {
 
     String id;
@@ -17,8 +14,8 @@ public class Person {
      * @param image
      * @param name
      */
-    Person(Drawable image, String name) {
-        this.id = UUID.randomUUID().toString();
+    Person(String id, Drawable image, String name) {
+        this.id = id;
         this.image = image;
         this.name = name;
     }

@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
      * Add images and names of the people in our group.
      */
     public void addQuestions() {
-        ((Questions) this.getApplication()).addPerson(getResources().getDrawable(R.drawable.anders), "Anders");
-        ((Questions) this.getApplication()).addPerson(getResources().getDrawable(R.drawable.simen), "Simen");
-        ((Questions) this.getApplication()).addPerson(getResources().getDrawable(R.drawable.sebastian), "Sebastian");
+        ((Questions) this.getApplication()).addPerson("", getResources().getDrawable(R.drawable.anders), "Anders");
+        ((Questions) this.getApplication()).addPerson("", getResources().getDrawable(R.drawable.simen), "Simen");
+        ((Questions) this.getApplication()).addPerson("", getResources().getDrawable(R.drawable.sebastian), "Sebastian");
 
     }
 

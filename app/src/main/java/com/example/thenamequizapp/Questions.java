@@ -14,8 +14,8 @@ public class Questions extends Application {
      * @param image
      * @param name
      */
-    public void addPerson(Drawable image, String name) {
-        people.add(new Person(image, name));
+    public void addPerson(String id, Drawable image, String name) {
+        people.add(new Person(id, image, name));
     }
 
     /**

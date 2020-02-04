@@ -24,14 +24,15 @@ import android.net.Uri;
 import com.example.thenamequizapp.Questions;
 import com.example.thenamequizapp.R;
 
+import java.util.UUID;
+
 public class NewPersonActivity extends AppCompatActivity {
 
     private ImageButton imageButton;
     private Button saveButton;
     private EditText nameText;
     private Drawable savedImage;
-    private String [] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.ACCESS_FINE_LOCATION", "android.permission.READ_PHONE_STATE", "android.permission.SYSTEM_ALERT_WINDOW","android.permission.CAMERA"};
-
+    private String[] permissions = {"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.ACCESS_FINE_LOCATION", "android.permission.READ_PHONE_STATE", "android.permission.SYSTEM_ALERT_WINDOW", "android.permission.CAMERA"};
 
 
     @Override
@@ -82,7 +83,8 @@ public class NewPersonActivity extends AppCompatActivity {
      * Saves the image and the name to the global lists
      */
     public void save() {
-        ((Questions) this.getApplication()).addPerson(savedImage, nameText.getText().toString());
+        String id = UUID.randomUUID().toString();
+        ((Questions) this.getApplication()).addPerson(id, savedImage, nameText.getText().toString());
         finish();
     }
 
