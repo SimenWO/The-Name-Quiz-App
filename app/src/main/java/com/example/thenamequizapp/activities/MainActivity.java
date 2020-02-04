@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton startButton;
     Button manageButton;
     Button settingsButton;
+
     /**
      * When NewPersonActivity is finished() the activity will be recreated.
      */

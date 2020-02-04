@@ -32,7 +32,7 @@ public class Questions extends Application {
         people.remove(index);
     }
 
-    public void clear(){
+    public void clear() {
         people.clear();
     }
 

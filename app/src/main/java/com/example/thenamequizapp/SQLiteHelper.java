@@ -30,7 +30,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         SQLiteDatabase database = getWritableDatabase();
         String sql = "INSERT INTO PEOPLE VALUES (?, ?, ?)";
 
-        Bitmap bitmap = ((BitmapDrawable)image).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) image).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] bitmapdata = stream.toByteArray();
@@ -53,7 +53,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         SQLiteStatement statement = database.compileStatement(sql);
 
 
-        Bitmap bitmap = ((BitmapDrawable)image).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) image).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] bitmapdata = stream.toByteArray();
