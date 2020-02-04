@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     public static SQLiteHelper sqLiteHelper;
     ImageButton startButton;
     Button manageButton;
-
+    Button settingsButton;
     /**
      * When NewPersonActivity is finished() the activity will be recreated.
      */
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.start);
         manageButton = findViewById(R.id.manage);
+        settingsButton = findViewById(R.id.settingsButton);
 
 
         /**
@@ -113,6 +114,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DatabaseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
