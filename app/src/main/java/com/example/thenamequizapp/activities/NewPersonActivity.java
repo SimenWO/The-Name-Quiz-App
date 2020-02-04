@@ -85,6 +85,7 @@ public class NewPersonActivity extends AppCompatActivity {
     public void save() {
         String id = UUID.randomUUID().toString();
         ((Questions) this.getApplication()).addPerson(id, savedImage, nameText.getText().toString());
+
         finish();
     }
 
