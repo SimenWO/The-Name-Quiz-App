@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
     ImageButton startButton;
     Button manageButton;
 
+    /**
+     * When NewPersonActivity is finished() the activity will be recreated.
+     */
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
          */
         Cursor cursor = MainActivity.sqLiteHelper.getData("SELECT * FROM PEOPLE");
 
+        ((Questions) this.getApplication()).clear();
         /**
          * Fetches the saved questions using SQLite
          */

@@ -32,6 +32,9 @@ public class Questions extends Application {
         people.remove(index);
     }
 
+    public void clear(){
+        people.clear();
+    }
 
     /**
      * Function for getting list count.
