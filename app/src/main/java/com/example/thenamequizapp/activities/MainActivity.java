@@ -32,13 +32,17 @@ public class MainActivity extends AppCompatActivity {
         String name = pref.getString("name", "");
 
 
+        /**
+         * If a name is not in the shared preferences the user will be taken to a name activity
+         */
         if (name.equals("")) {
             Intent intent = new Intent(MainActivity.this, NameActivity.class);
             startActivity(intent);
-        } else {
-            return;
         }
 
+        /**
+         * Get the amount of people in the database
+         */
         final int count = ((Questions) this.getApplication()).getCount();
 
         /**
@@ -70,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 
