@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.thenamequizapp.R;
 
@@ -17,7 +18,8 @@ public class NameActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+        Toast.makeText(getApplicationContext(), "Please enter your name first!",
+                Toast.LENGTH_LONG).show();
     }
 
     @Override
