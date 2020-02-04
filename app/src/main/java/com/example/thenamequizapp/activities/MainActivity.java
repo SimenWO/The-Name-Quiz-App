@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.widget.Button;
 import android.view.View;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.thenamequizapp.Questions;
 import com.example.thenamequizapp.R;
@@ -35,16 +36,27 @@ public class MainActivity extends AppCompatActivity {
         manageButton = findViewById(R.id.manage);
 
 
+        /**
+         * Fetches the name shared preferences
+         */
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MySharedPref", MODE_PRIVATE);
         String name = pref.getString("name", "");
 
+        /**
+         * Creates SQLite database and creates the database if it is not created
+         */
         sqLiteHelper = new SQLiteHelper(this, "PeopleDB.sqlite", null, 1);
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS PEOPLE(id VARCHAR PRIMARY KEY, image BLOB, name VARCHAR)");
 
 
-        // get all data from sqlite
+        /**
+         * Get all the data from SQLite and puts them in a cursor
+         */
         Cursor cursor = MainActivity.sqLiteHelper.getData("SELECT * FROM PEOPLE");
 
+        /**
+         * Fetches the saved questions using SQLite
+         */
         while (cursor.moveToNext()) {
             String sqlId = cursor.getString(0);
             byte[] sqlImage = cursor.getBlob(1);
@@ -66,14 +78,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * Get the amount of people in the database
          */
-        // final int count = ((Questions) this.getApplication()).getCount();
-
-        /**
-         * If the count is 0 then all of the names and images will be added to the global lists.
-         */
-        //if (count == 0) {
-        //    addQuestions();
-        //}
+        final int count = ((Questions) this.getApplication()).getCount();
 
         /**
          *  Starts new activity.
@@ -81,8 +86,13 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, QuizActivity.class);
-                startActivity(intent);
+                if (count == 0) {
+                    Toast.makeText(getApplicationContext(), "No questions in the database!",
+                            Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(MainActivity.this, QuizActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
