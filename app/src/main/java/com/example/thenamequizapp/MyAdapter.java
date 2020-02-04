@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import android.view.View;
 import android.util.Log;
 
+import com.example.thenamequizapp.activities.MainActivity;
+
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
@@ -71,6 +73,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                             case DialogInterface.BUTTON_POSITIVE:
                                 Log.e("Answer", "Yes");
                                 people.remove(position);
+                                MainActivity.sqLiteHelper.deleteData(people.get(position).getId());
+
                                 notifyDataSetChanged();
                                 break;
 
