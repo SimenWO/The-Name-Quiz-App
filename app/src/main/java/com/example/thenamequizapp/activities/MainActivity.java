@@ -2,6 +2,7 @@ package com.example.thenamequizapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.widget.ImageButton;
 import android.content.Intent;
 import android.widget.Button;
@@ -26,6 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
         startButton = findViewById(R.id.start);
         manageButton = findViewById(R.id.manage);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String name = pref.getString("name", "");
+
+
+        if (name.equals("")) {
+            Intent intent = new Intent(MainActivity.this, NameActivity.class);
+            startActivity(intent);
+        } else {
+            return;
+        }
 
         final int count = ((Questions) this.getApplication()).getCount();
 

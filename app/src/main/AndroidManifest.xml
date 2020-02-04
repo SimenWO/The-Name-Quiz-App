@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.NewPersonActivity"></activity>
+        <activity android:name=".activities.NameActivity"></activity>
+        <activity android:name=".activities.NewPersonActivity" />
         <activity android:name=".activities.ResultActivity" />
         <activity android:name=".activities.QuizActivity" />
         <activity android:name=".activities.DatabaseActivity" />
