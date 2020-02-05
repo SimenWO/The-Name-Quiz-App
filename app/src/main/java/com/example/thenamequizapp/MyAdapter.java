@@ -72,9 +72,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         switch (which) {
                             case DialogInterface.BUTTON_POSITIVE:
                                 Log.e("Answer", "Yes");
-                                people.remove(position);
                                 MainActivity.sqLiteHelper.deleteData(people.get(position).getId());
-
+                                people.remove(position);
                                 notifyDataSetChanged();
                                 break;
 
