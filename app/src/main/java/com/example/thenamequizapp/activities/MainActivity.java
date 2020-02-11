@@ -65,17 +65,21 @@ public class MainActivity extends AppCompatActivity {
         sqLiteHelper = new SQLiteHelper(this, "PeopleDB.sqlite", null, 1);
         sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS PEOPLE(id VARCHAR PRIMARY KEY, image BLOB, name VARCHAR)");
 
-        /**
-         * Adds testpersons for testing getResources().getDrawable(R.drawable.myImage);
-         */
-        sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.anders), "Anders");
-        sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.simen), "simen");
-        sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.sebastian), "sebastian");
 
         /**
          * Get all the data from SQLite and puts them in a cursor
          */
         Cursor cursor = MainActivity.sqLiteHelper.getData("SELECT * FROM PEOPLE");
+
+        /**
+         * Adds testpersons for testing getResources().getDrawable(R.drawable.myImage);
+         */
+
+        if(cursor.getCount() == 0 ) {
+            sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.anders), "Anders");
+            sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.simen), "simen");
+            sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.sebastian), "sebastian");
+        }
 
         ((Questions) this.getApplication()).clear();
         /**
