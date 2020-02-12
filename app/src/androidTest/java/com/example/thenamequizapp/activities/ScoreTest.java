@@ -24,6 +24,7 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.pressImeActionButton;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -38,7 +39,7 @@ public class ScoreTest {
 
     @Test
     public void scoreTest() {
-
+   
 
         /**
          * First time running the app the code-snippet under must be included
@@ -213,6 +214,12 @@ public class ScoreTest {
                                 3),
                         isDisplayed()));
         appCompatButton7.perform(click());
+
+
+
+
+
+
     }
 
     private static Matcher<View> childAtPosition(

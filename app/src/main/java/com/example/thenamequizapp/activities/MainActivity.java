@@ -79,6 +79,11 @@ public class MainActivity extends AppCompatActivity {
             sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.anders), "Anders");
             sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.simen), "simen");
             sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.sebastian), "sebastian");
+        } else if(cursor.getCount() == 1){
+            sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.anders), "Anders");
+            sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.simen), "simen");
+        } else if(cursor.getCount() == 2){
+            sqLiteHelper.insertData(UUID.randomUUID().toString(), getResources().getDrawable(R.drawable.simen), "simen");
         }
 
         ((Questions) this.getApplication()).clear();
